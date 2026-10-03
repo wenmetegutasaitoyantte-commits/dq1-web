@@ -47,12 +47,12 @@ assetLoader.addAssets(
   resource
     .loadJson<Record<string, string>>('events.json')
     .then((events) => SetGameEventScript(events)),
-engine.i18n
-  .loadLanguageEntries('japanese', resource)
-  .then((entries) => {
-    engine.i18n.setLanguageAndEntries('japanese', entries)
-  })
-
+  engine.i18n
+    .loadLanguageEntries('japanese', resource)
+    .then((entries) => {
+      engine.i18n.setLanguageAndEntries('japanese', entries)
+    })
+)
 
 initScene(engine)
 
@@ -69,11 +69,6 @@ function initDevEnv() {
   const isDev = import.meta.env.DEV
   const btn = document.getElementById('testBtn') as HTMLButtonElement
   btn.style.display = isDev ? 'block' : 'none'
-
-  // battle test
-  // setTimeout(() => {
-  //   battle(40)
-  // }, 300)
 
   btn.addEventListener('click', () => {
     engine.audios.playBGM(currentScene().bgm)
