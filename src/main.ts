@@ -47,12 +47,12 @@ assetLoader.addAssets(
   resource
     .loadJson<Record<string, string>>('events.json')
     .then((events) => SetGameEventScript(events)),
-  engine.i18n
-    .loadLanguageEntries(engine.i18n.language, resource)
-    .then((entries) => {
-      engine.i18n.setLanguageAndEntries(engine.i18n.language, entries)
-    })
-)
+engine.i18n
+  .loadLanguageEntries('japanese', resource)
+  .then((entries) => {
+    engine.i18n.setLanguageAndEntries('japanese', entries)
+  })
+
 
 initScene(engine)
 
